@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+</head>
+<body>
+    <h1>Receipt</h1>
+    <p>Date: {{ receipt['date'] }}</p>
+    <p>Total Price: ${{ receipt['total_price'] }}</p>
+    <h3>Items Purchased:</h3>
+    <ul>
+        {% for item in receipt['items'] %}
+            <li>{{ item['name'] }} (x{{ item['quantity'] }}) - ${{ item['price'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Continue Shopping</a>
+</body>
+</html>

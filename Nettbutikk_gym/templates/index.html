@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skull Workshop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="icon" href="{{ url_for('static', filename='images/white_skull.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/logo_skull_workshop.png') }}" alt="Skull logo">
+            </a>
+
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about_us')}}">About Us</a>
+                <a href="{{ url_for('cart') }}">Shopping Cart</a>
+            </div>
+        </div>
+
+        <div class="main-page">
+            <div class="best-seller">
+                <h1>Our Best Sellers!</h1>
+            </div>
+            <div class="product-container">
+                {% for product in products %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
+                    <h3>{{ product['name'] }}</h3>
+                    <p>Boosts strength and performance.</p>
+                    <p>Price: ${{ product['price'] }}</p>
+                <div class="card-buttons">
+                    <a href="{{ url_for('add_to_cart', product_id=product['id']) }}" class="add_to_cart">Add to Cart</a>
+                    <a href="{{ url_for('product_details', product_id=product['id']) }}" class="view_details">View Details</a>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>    
+
+        <div class="footer">
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                    </div>
+                    <div class="footer-right">
+                        <p>&copy; 2024 Skull Workshop. All Rights Reserved.</p>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
