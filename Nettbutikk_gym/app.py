@@ -10,6 +10,7 @@ products = [
     {'id': 1, 'name': 'Creatine', 'price': 19.99, 'image': 'images/creatine_skull.png', 'info': "For juicy pumps!"},
     {'id': 2, 'name': 'Pre-Workout', 'price': 24.99, 'image': 'images/pre-workout_skull.png', 'info': "To energies you workouts!"},
     {'id': 3, 'name': 'Protein Powder', 'price': 29.99, 'image': 'images/protein_powder_skull.png', 'info': "To hit your protein goals!"}
+    {'id': 4, 'name': 'Shampoo', 'price': 4.99, 'image': 'images/protein_powder_skull.png', 'info': "So you don't stink!"}
 ]
 
 def get_db_connection():
